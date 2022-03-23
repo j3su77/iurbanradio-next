@@ -1,73 +1,38 @@
 import { useContext, useState } from "react";
 import Link from "next/link";
-
-import { RiCloseLine, RiMoonFill, RiSunFill } from "react-icons/ri";
+import { RiMoonFill, RiSunFill } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
+
 import { UIContext } from "../../context";
 import { IurbanSvg } from "./";
 
-import OutsideClickHandler from "react-outside-click-handler";
-
 import styles from "./Navbar.module.css";
+import { itemsNav } from "../../database";
 
 export const Navbar = () => {
-  const { toggleSideMenu, isMenuOpen, toggleTheme, isDark } =
-    useContext(UIContext);
-    const [scrolledTrue, setScrolledTrue] = useState(false);
+  const { toggleSideMenu, toggleTheme, isDark } = useContext(UIContext);
+  const [scrolledTrue, setScrolledTrue] = useState(false);
 
-
-/*=============== SCROLL NAV VIEW SHADOW ===============*/
-    const toggleVisible = () => {
-      const scrolled = document.documentElement.scrollTop;
-      if (scrolled > 80) {
-        setScrolledTrue(true);
-      } else if (scrolled <= 80) {
-        setScrolledTrue(false);
-      }
-    };
-    if (process.browser) window.addEventListener("scroll", toggleVisible);
+  /*=============== SCROLL NAV VIEW SHADOW ===============*/
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 80) {
+      setScrolledTrue(true);
+    } else if (scrolled <= 80) {
+      setScrolledTrue(false);
+    }
+  };
+  if (process.browser) window.addEventListener("scroll", toggleVisible);
 
   return (
     <>
       <header
-        className={`${styles.header} ${scrolledTrue && styles["scroll-header"]}`}
+        className={`${styles.header} ${
+          scrolledTrue && styles["scroll-header"]
+        }`}
         id="header"
       >
         <nav className={`${styles.nav} container`}>
-
-          <OutsideClickHandler
-            onOutsideClick={() => {
-              isMenuOpen && toggleSideMenu();
-            }}
-            display="contents"
-          >
-            <div
-              className={`${styles.nav__menu} ${
-                isMenuOpen && styles["show-menu"]
-              }`}
-              id="nav-menu"
-            >
-              <ul className={styles.nav__list} onClick={toggleSideMenu}>
-                {/* <!-- _____home______ --> */}
-
-                <Link href="/">
-                  <a className={styles.nav__link}>Inicio</a>
-                </Link>
-
-                {/* <!-- _____About______ --> */}
-                <Link href="#publicaciones">
-                  <a className={styles.nav__link}>publicaciones</a>
-                </Link>
-              </ul>
-
-              {isMenuOpen && (
-                <div className={styles.nav__close} id="nav-close">
-                  <RiCloseLine onClick={toggleSideMenu} />
-                </div>
-              )}
-            </div>
-          </OutsideClickHandler>
-
           {/* -----------item 1------------- */}
           <div className={styles.nav__btns}>
             {/* <!-- Theme change button --> */}
@@ -98,10 +63,23 @@ export const Navbar = () => {
             </Link>
           </div>
 
+          <div className={styles.separate__item} />
+
           {/* -----------item 3------------- */}
           <div className={styles.nav__toggle} id="nav-toggle">
             <FaBars onClick={toggleSideMenu} />
           </div>
+
+          {/* -----------item link navbar------------- */}
+
+          <ul className={styles.nav__list}>
+            {itemsNav.map((item) => (
+              <Link href={item.link}>
+                <a className={styles.nav__link}>{item.title}</a>
+              </Link>
+            ))}
+
+          </ul>
         </nav>
       </header>
     </>

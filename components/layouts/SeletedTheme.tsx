@@ -1,7 +1,6 @@
-import React, { FC } from "react";
-import Cookies from "js-cookie";
-import { useContext, useEffect } from "react";
-import { UIContext } from "../../context/ui/UIContext";
+import React, { FC, useContext, useEffect  } from "react";
+
+import { UIContext } from "../../context";
 
 export const SeletedTheme: FC = ({ children }) => {
   const { isDark } = useContext(UIContext);

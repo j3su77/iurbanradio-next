@@ -1,12 +1,10 @@
-import React from 'react'
-import { AiOutlineLoading3Quarters } from "react-icons/ai"
+import React from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-import styles from "./SpinnerLineRadio.module.css"
+import styles from "./SpinnerLineRadio.module.css";
 
 const SpinnerLine = () => {
-    return (
-        <AiOutlineLoading3Quarters className={styles.spinner__line} />
-    )
-}
+  return <AiOutlineLoading3Quarters className={styles.spinner__line} />;
+};
 
-export default SpinnerLine
+export default SpinnerLine;

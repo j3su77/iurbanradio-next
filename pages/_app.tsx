@@ -8,9 +8,6 @@ import "../styles/radio.css";
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 
-  
-  
-  
   return (
     <UIProvider>
       <Component {...pageProps} />

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import $ from "jquery";
 import AudioPlayer from "react-h5-audio-player";
+import $ from "jquery";
 
 import AudioControls from "./AudioControls";
 import LinesBars from "./LinesBars";

@@ -1,8 +1,10 @@
-import Head from "next/head"
 import { FC } from "react"
-import RadioPlayer from "../radio/RadioPlayer"
+import Head from "next/head"
+
 import { Navbar } from "../ui"
-import { SeletedTheme } from "./SeletedTheme"
+import RadioPlayer from "../radio/RadioPlayer"
+import { SeletedTheme } from "./"
+import { SideMenu } from "../ui"
 
 
 
@@ -32,7 +34,7 @@ export const MainLayout: FC<Props>= ({ children, title, pageDescription, imageFu
 
   
       <Navbar />
-  
+      <SideMenu />
       <RadioPlayer />
 
     <main style={{ margin: "80px auto", maxWidth: "1440px", padding: "0 30px" }}>
