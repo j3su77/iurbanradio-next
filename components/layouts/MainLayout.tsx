@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Head from "next/head";
 
-import { Navbar } from "../ui";
+import { Footer, Navbar } from "../ui";
 import { SideMenu } from "../ui";
 
 // import { SeletedTheme } from "./";
@@ -38,7 +38,7 @@ export const MainLayout: FC<Props> = ({
         {children}
       </main>
 
-      <footer></footer>
+      <Footer />
     </>
   );
 };

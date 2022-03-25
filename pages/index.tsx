@@ -10,7 +10,7 @@ const HomePage: FC = () => {
  
   return (
     <MainLayout
-      title="IUrbanRadio"
+      title="📻 - IUrbanRadio"
       pageDescription="lo mejor de la radio online"
     >
       {isLoading ? (

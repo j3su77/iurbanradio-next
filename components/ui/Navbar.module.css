@@ -39,6 +39,10 @@
     fill: var(--white-color);
     width: 20px;
   }
+  .text__logo-i {
+    font-size: 1.16rem;
+    font-weight: 600;
+  }
 
   .nav__logo:hover {
     color: var(--white-color);
@@ -48,6 +52,8 @@
 
   .text__logo {
     font-weight: var(--font-semi-bold);
+    margin-left: -8px;
+    margin-top: 2.5px;
   }
 
   .separate__item {
@@ -75,6 +81,7 @@
     color: var(--white-color);
     font-weight: var(--font-medium);
     padding: .6rem .4rem;
+    font-family: var(--roboto-font);
   }
   
   .nav__link:hover {

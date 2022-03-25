@@ -43,19 +43,20 @@ export const Navbar = () => {
             )}
           </div>
 
-          {/* -----------item 2------------- */}
+          {/* -----------Iurban Radio icon - text ------------- */}
           <div className={styles["nav__content-userandlogo"]}>
             <Link href="/">
               <a className={styles.nav__logo}>
                 <IurbanSvg className={styles["nav__logo-icon"]} />
-                <span className={styles.text__logo}>iUrban Radio</span>
+                <span className={styles["text__logo-i"]}>i</span>
+                <span className={styles.text__logo}>Urban Radio</span>
               </a>
             </Link>
           </div>
 
           <div className={styles.separate__item} />
 
-          {/* -----------item 3------------- */}
+          {/* -----------Icon Button toggle------------ */}
           <div className={styles.nav__toggle} id="nav-toggle">
             <FaBars onClick={toggleSideMenu} />
           </div>

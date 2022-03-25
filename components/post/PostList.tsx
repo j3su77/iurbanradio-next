@@ -11,7 +11,7 @@ interface Props {
 
 export const PostList: FC<Props> = ({ posts, titleSection }) => {
   return (
-    <div className={styles.post__container + " container"}>
+    <div className={styles.post__container + " container"} id="publicaciones">
     <h2 className={"section__title-center"}>{titleSection}</h2>
 
       <div className={styles.posts__content + " grid"}>
