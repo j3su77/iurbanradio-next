@@ -1,8 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 mongo/
+
 .env
-/.git
+
 # dependencies
 /node_modules
 /.pnp
@@ -26,7 +26,6 @@ mongo/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
 # local env files
 .env.local
