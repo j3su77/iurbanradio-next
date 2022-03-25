@@ -3,8 +3,9 @@ import React, { FC, useContext, useEffect  } from "react";
 import { UIContext } from "../../context";
 
 export const SeletedTheme: FC = ({ children }) => {
-  const { isDark } = useContext(UIContext);
-  let isTheme;
+  const { isDark, isMenuOpen } = useContext(UIContext);
+  let isTheme: string;
+  let openMenu: string
   useEffect(() => {
     isTheme = isDark ? "dark-theme" : "light-theme";
     if (process.browser)  document.querySelector("body")!.classList.add(isTheme)
@@ -18,6 +19,13 @@ export const SeletedTheme: FC = ({ children }) => {
       document.querySelector("body")!.classList.add(isTheme);
     }
   }, [isDark]);
+
+  useEffect(() => {
+  
+    if (process.browser)  document.querySelector("body")!.classList.toggle("menu__open", isMenuOpen)
+    }, [isMenuOpen]);
+
+
 
   return <>{children}</>;
 };

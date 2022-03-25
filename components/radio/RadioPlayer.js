@@ -44,7 +44,6 @@ const RadioPlayer = () => {
   function onLoadedd() {
     setIsLoading(false);
 
-    console.log("cargando");
   }
 
   const isRealPlaying = () => {
@@ -115,7 +114,6 @@ const RadioPlayer = () => {
                 preload="metadata"
                 // Try other props!
                 ref={radiocontrol}
-                onPlay={(e) => console.log("onPlay")}
                 onPlaying={isRealPlaying}
                 onLoadedMetaData={onLoadedd}
                 onPause={isPaused}

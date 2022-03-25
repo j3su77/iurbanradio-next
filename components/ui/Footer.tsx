@@ -7,19 +7,16 @@ import styles from "./Footer.module.css"
 export const Footer = () => {
   return (
     <footer className={`${styles.footer} section`}>
-      <div className={`${styles["footer__content-logo"]} " container"`}>
+      <div className={`${styles["footer__content-logo"]} container`}>
         <div className={styles.footer__logo}>
-        <IurbanSvg className={styles["footer__logo-icon"]} />
-          iUrban Radio
+          <IurbanSvg className={styles["footer__logo-icon"]} />
+          <span className={styles["text__logo-i"]}>i</span>
+          <span className={styles.text__logo}>Urban Radio</span>
         </div>
 
         <div className={styles.box}>
           <div className={`${styles["box-sm"]} ${styles.red}`}></div>
-          <div className={`${styles["box-sm"]}  ${styles.orange}`}></div>
-          <div className={`${styles["box-sm"]}  ${styles.yellow}`}></div>
-          <div className={`${styles["box-sm"]}  ${styles.green}`}></div>
-          <div className={`${styles["box-sm"]}  ${styles.blue}`}></div>
-          <div className={`${styles["box-sm"]}  ${styles.purple}`}></div>
+         
         </div>
       </div>
       <div className={`${styles.footer__container} container grid`}>
@@ -28,8 +25,9 @@ export const Footer = () => {
 
           <ul className={styles.footer__data}>
             <li className={styles.footer__information}>Soledad - Atlántico</li>
+            <li className={styles.footer__information}>Colombia 🇨🇴</li>
             <li className={styles.footer__information}><strong>C.P :</strong> 083006</li>
-
+            
           </ul>
         </div>
 
@@ -69,16 +67,16 @@ export const Footer = () => {
 
       
       </div>
-      <div className={`${styles.footer__images} container`}>
-          <h3 className={styles.footer__title}>Lorem ipsum, dolor sit amet consectetur adipisicing.</h3>
+      {/* <div className={`${styles.footer__images} container`}>
+          <h3 className={styles.footer__title}>Lorem ipsum, dolor sit amet consectetur adipisicing.</h3> 
 
-          {/* <div className="footer__cards">
+           <div className="footer__cards">
             <img src="assets/img/card1.png" alt="" className="footer__card" />
             <img src="assets/img/card2.png" alt="" className="footer__card" />
             <img src="assets/img/card3.png" alt="" className="footer__card" />
             <img src="assets/img/card4.png" alt="" className="footer__card" />
-          </div> */}
-        </div>
+          </div>
+        </div>  */}
 
       <p className={styles.footer__copy}>&#169; {new Date().getFullYear()} J3su. Todos los derechos reservados.</p>
     </footer>

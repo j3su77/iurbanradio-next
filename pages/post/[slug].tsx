@@ -8,7 +8,6 @@ interface Props {
 }
 
 const PostPage: NextPage<Props> = ({ post }) => {
-  console.log(post);
   return (
     <MainLayout title={post.title} pageDescription={post.description}>
       <div className={` container`}>

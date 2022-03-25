@@ -39,10 +39,7 @@
     fill: var(--white-color);
     width: 20px;
   }
-  .text__logo-i {
-    font-size: 1.16rem;
-    font-weight: 600;
-  }
+
 
   .nav__logo:hover {
     color: var(--white-color);
@@ -51,9 +48,16 @@
   }
 
   .text__logo {
-    font-weight: var(--font-semi-bold);
+    font-weight: bold;
     margin-left: -8px;
     margin-top: 2.5px;
+    /* text-transform: uppercase; */
+  }
+
+  .text__logo-i {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 0.5px;
   }
 
   .separate__item {

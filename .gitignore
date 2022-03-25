@@ -15,6 +15,7 @@ mongo/
 /.next/
 .next/
 next/
+/next
 /out/
 
 # production

@@ -38,6 +38,7 @@
   --font-thin: 300;
   --font-medium: 500;
   --font-semi-bold: 600;
+ 
 
   /*========== Margenes Bottom ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -83,7 +84,6 @@ button,
 input,
 textarea{
   font-family: var(--body-font); 
-
   font-size: var(--normal-font-size);
 }
 
@@ -325,4 +325,8 @@ the website, in dark theme
 
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
+}
+
+.menu__open {
+  overflow: hidden;
 }

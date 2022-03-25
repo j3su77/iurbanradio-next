@@ -7,13 +7,22 @@
 
   }
 
-  .footer__content-logo {
-    padding: .5rem 1rem;
+  .text__logo {
+    font-weight: bold;
+    margin-left: -8px;
+    margin-top: 2.5px;
+
   }
+  .text__logo-i {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 0.5px;
+  }
+
+ 
   
   .footer__logo {
     color: var(--title-color);
-    text-transform: uppercase;
     font-weight: 700;
     letter-spacing: -1px;
     display: inline-flex;
@@ -34,7 +43,7 @@
   
   .footer__title {
     font-size: var(--h3-font-size);
-    margin-bottom: var(--mb-1-5);
+    margin-bottom: var(--mb-1);
     grid-template-columns:  1fr;
   }
   
@@ -60,7 +69,7 @@
   
   .footer__data {
     display: grid;
-    row-gap: .75rem;
+    row-gap: .5rem;
   }
   
   .footer__information {
@@ -111,50 +120,15 @@
 
 
 
-
   .box {
-    display: flex;
+    display: block;
     width: 100%;
     height: 8px;
-    margin: 0 0px 60px 0px;
-  }
-  
-  .box-sm {
-    height: 12px;
-    margin: 0;
-    flex-grow: 1;
-    transition: all .8s ease-in-out;
-    cursor: pointer;
-  }
-
-  /* Growing the width of box, when hover using flex-grow property */
-.box-sm:hover {
-  flex-grow: 12;
-}
-
-.red {
-    background-color: hsla(270, 5%, 9%, 1);
-  }
-  
-  .orange {
+    margin-bottom: var(--mb-1-5);
     background-color: var(--blue-color);
   }
   
-  .yellow {
-    background-color: hsla(270, 5%, 9%, 1);
-  }
-  
-  .green {
-    background-color:var(--blue-color);
-  }
-  
-  .blue {
-    background-color: hsla(270, 5%, 9%, 1);
-  }
-  
-  .purple {
-    background-color: var(--blue-color);
-  }
+
 
 
   @media  screen and (min-width: 767px)  {
