@@ -25,7 +25,7 @@ export const SideMenu = () => {
         >
          <ul className={styles.nav__list}>
             {itemsNav.map((item) => (
-              <Link href={item.link}>
+              <Link key={item.id} href={item.link}>
                 <a className={styles.nav__link}>{item.title}</a>
               </Link>
             ))}

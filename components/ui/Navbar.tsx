@@ -13,17 +13,7 @@ export const Navbar = () => {
   const { toggleSideMenu, toggleTheme, isDark } = useContext(UIContext);
   const [scrolledTrue, setScrolledTrue] = useState(false);
 
-  /*=============== SCROLL NAV VIEW SHADOW ===============*/
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 80) {
-      setScrolledTrue(true);
-    } else if (scrolled <= 80) {
-      setScrolledTrue(false);
-    }
-  };
-  if (process.browser) window.addEventListener("scroll", toggleVisible);
-
+  
   return (
     <>
       <header
@@ -74,7 +64,7 @@ export const Navbar = () => {
 
           <ul className={styles.nav__list}>
             {itemsNav.map((item) => (
-              <Link href={item.link}>
+              <Link key={item.id} href={item.link}>
                 <a className={styles.nav__link}>{item.title}</a>
               </Link>
             ))}

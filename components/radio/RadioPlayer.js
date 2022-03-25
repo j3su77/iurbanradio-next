@@ -8,10 +8,12 @@ import Marquee from "react-fast-marquee";
 
 
 
+
 const RadioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const radiocontrol = useRef();
+
 
   var height = 0;
 
@@ -30,6 +32,7 @@ const RadioPlayer = () => {
 
   useEffect(() => {
     if (
+      !isPlaying ||
       !radiocontrol.current.audio.current.onPlaying ||
       radiocontrol.current.audio.current.paused ||
       radiocontrol.current.audio.current.onPause
@@ -37,7 +40,7 @@ const RadioPlayer = () => {
       isPaused();
     } else {
     }
-  }, [{}]);
+  }, []);
   function onLoadedd() {
     setIsLoading(false);
 
