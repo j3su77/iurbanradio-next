@@ -6,16 +6,22 @@ import { FaBars } from "react-icons/fa";
 import { UIContext } from "../../context";
 import { IurbanSvg } from "./";
 
-import styles from "./Navbar.module.css";
+
 import { itemsNav } from "../../database";
 
+import styles from "./Navbar.module.css";
+import { useLoaded } from '../../hooks';
+
+
+
 export const Navbar = () => {
+  const loadedPage = useLoaded();
   const { toggleSideMenu, toggleTheme, isDark } = useContext(UIContext);
   const [scrolledTrue, setScrolledTrue] = useState(false);
-
   
   return (
     <>
+    { loadedPage && 
       <header
         className={`${styles.header} ${
           scrolledTrue && styles["scroll-header"]
@@ -26,7 +32,7 @@ export const Navbar = () => {
           {/* -----------item 1------------- */}
           <div className={styles.nav__btns}>
             {/* <!-- Theme change button --> */}
-            {isDark !== true ? (
+            {!isDark ? (
               <RiMoonFill
                 onClick={() => toggleTheme()}
                 className={styles["change-theme"]}
@@ -73,6 +79,7 @@ export const Navbar = () => {
           </ul>
         </nav>
       </header>
+            }
     </>
-  );
+  )
 };

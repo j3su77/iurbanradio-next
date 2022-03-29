@@ -20,6 +20,7 @@
   --main-color: rgb(207, 205, 209);
   --blue-color: hsl(235deg 52% 33%);
   --white-color: #fff;
+  --white: #ccc;
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/

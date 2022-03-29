@@ -11,11 +11,18 @@ interface Props {
 export const PostCard: FC<Props> = ({ post }) => {
   return (
     <div className={`${styles.post__content}`}>
-      <Link href={`/post/${post.slug}`} passHref>
+      <div className={styles.tag__content}>
+      {
+        post.tags.map((tag, index) => (
+          <div key={index} className={styles.tag__item}>{tag}</div>
+        ))
+      }
+      </div>
+          <Link href={`/post/${post.slug}`} passHref>
         <a>
           <img
             src={`/posts/${post.images[0]}`}
-            alt=""
+            alt={post.title}
             className={styles.post__img}
           />
         </a>

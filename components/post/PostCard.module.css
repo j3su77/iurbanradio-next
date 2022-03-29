@@ -19,11 +19,30 @@
     background-color: #1e1e1e3b;
     bottom: 0;
   }
+
+  .tag__content {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    gap: .2rem;
+    z-index: 99;
+  }
+
+  .tag__item {
+    background-color: var(--blue-color);
+    color: var(--white);
+    padding: 3px 4px;
+    border-radius: 8px;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    font-family: var(--roboto-font);
+  }
   
   .post__img {
     width: 100%;
     transition: .3s;
-    /* aspect-ratio: 16 / 9; */
+    /* aspect-ratio: 16 / 9;  */
     object-fit: contain;
   }
   
@@ -35,7 +54,9 @@
     transform: translateY(-.5rem);
   }
 
-
+  .post__content:hover .tag__item {
+    background-color: rgb(28, 28, 112);
+  }
   
   @media screen and (min-width: 992px){
     

@@ -6,7 +6,7 @@
   
   .posts__content {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
     padding-top: 1rem;
     
   }
@@ -16,10 +16,12 @@
     align-items: center;
     text-align: center;
   }
-  @media  screen and (min-width: 767px)  {
+
+
+  @media  screen and (min-width: 540px)  {
     .posts__content {
       grid-template-columns: repeat(2,1fr);
-      gap: 1.5rem;
+      gap: .7rem;
       padding-top: 1rem;
     }
     
