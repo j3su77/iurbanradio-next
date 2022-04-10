@@ -213,6 +213,10 @@
     box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.75); 
     z-index: 1001;
   }
+ 
+
+ 
+
   
   .audio-controls .play svg,
   .audio-controls .pause svg {
@@ -255,8 +259,27 @@
     margin: auto;
     border: 5px solid var(--blue-color);
     padding-left: 4px;
-    
+    animation: pulse 2000ms infinite;
   }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 var(--blue-color);
+    }
+    
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(52, 172, 224, 0);
+    }
+    
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(52, 172, 224, 0);
+    }
+  }
+
+
   .audio-controls .play path {
     fill: var(--title-color) !important;
   

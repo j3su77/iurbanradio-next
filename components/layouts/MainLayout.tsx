@@ -4,8 +4,6 @@ import Head from "next/head";
 import { Footer, Navbar } from "../ui";
 import { SideMenu } from "../ui";
 
-// import { SeletedTheme } from "./";
-// import RadioPlayer from "../radio/RadioPlayer";
 
 interface Props {
   title: string;

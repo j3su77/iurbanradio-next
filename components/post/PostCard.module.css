@@ -6,6 +6,7 @@
     text-align: center;
     overflow: hidden;
     cursor: pointer;
+
   }
   .description__post {
     display: flex;
@@ -42,8 +43,8 @@
   .post__img {
     width: 100%;
     transition: .3s;
-    /* aspect-ratio: 16 / 9;  */
-    object-fit: contain;
+    aspect-ratio: 16 / 9;  
+    object-fit: cover;
   }
   
   .post__title {

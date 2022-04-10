@@ -1,3 +1,3 @@
 
 
-export { default as RadioPlayer } from "./RadioPlayer"
+export * from "./RadioPlayer"

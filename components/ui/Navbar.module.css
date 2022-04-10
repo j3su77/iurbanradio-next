@@ -122,6 +122,7 @@
   .nav__btns , .change-theme{
     color: var(--white-color);
     fill: var(--white-color);
+    cursor: pointer;
   }
   .change-theme {
     margin-top: .4rem;

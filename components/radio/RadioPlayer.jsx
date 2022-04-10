@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import AudioPlayer from "react-h5-audio-player";
 import $ from "jquery";
 
 import AudioControls from "./AudioControls";
 import LinesBars from "./LinesBars";
-import Marquee from "react-fast-marquee";
+import { MarqueeText } from "./MarqueeText";
 
-const RadioPlayer = () => {
+export const RadioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const radiocontrol = useRef();
@@ -17,7 +17,7 @@ const RadioPlayer = () => {
     if (isPlaying) {
       setIsLoading(true);
       radiocontrol.current.audio.current.src =
-        "https://stream.zeno.fm/9a8ufvubpy8uv" +
+        process.env.NEXT_PUBLIC_RADIO_URL +
         "?noCache=" +
         Math.floor(Math.random() * 1000000);
       radiocontrol.current.audio.current.play();
@@ -63,25 +63,15 @@ const RadioPlayer = () => {
     <div className="container_radio">
       <div className="radio-container" style={{ position: "relative" }}>
         <div className="radio-body">
-          <LinesBars />
+          <LinesBars  />
 
           <div className="button-player">
             <div className="audio-controls">
-              {isPlaying && (
-                <Marquee
-                  gradient={false}
-                  speed={50}
-                  className="overflow-hidden"
-                >
-                  <span style={{ marginLeft: "300px" }}>
-                    Sonando iurbanradio
-                  </span>
-                  <span style={{ marginLeft: "300px" }}>
-                    Sonando iurbanradio
-                  </span>
-                </Marquee>
-              )}
-              <div className="radio-lid  slide-bottom"></div>
+             <MarqueeText 
+             isPlaying={isPlaying} 
+             isLoading={isLoading} 
+             />
+              <div className="radio-lid slide-bottom" />
               <AudioControls
                 isPlaying={isPlaying}
                 onPlayPauseClick={setIsPlaying}
@@ -104,4 +94,3 @@ const RadioPlayer = () => {
   );
 };
 
-export default RadioPlayer;
