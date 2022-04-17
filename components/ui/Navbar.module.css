@@ -1,7 +1,7 @@
 /*=============== HEADER ===============*/
 .header {
     width: 100%;
-    background-color: var(--blue-color) !important;
+    background-color: var(--main-color) !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -21,7 +21,7 @@
   .nav__logo,
   .nav__toggle,
   .nav__content-userandlogo {
-    color: var(--white-color);
+    color: var(--title-color);
   }
 
   
@@ -36,14 +36,14 @@
   }
 
   .nav__logo-icon  {
-    fill: var(--white-color);
+    fill: var(--title-color);
     width: 20px;
   }
 
 
   .nav__logo:hover {
-    color: var(--white-color);
-    fill: var(--white-color);
+    color: var(--title-color);
+    fill: var(--title-color);
     
   }
 
@@ -82,7 +82,7 @@
   }
   
   .nav__link {
-    color: var(--white-color);
+    color: var(--title-color);
     font-weight: var(--font-medium);
     padding: .6rem .4rem;
     font-family: var(--roboto-font);
@@ -120,8 +120,8 @@
   }
 
   .nav__btns , .change-theme{
-    color: var(--white-color);
-    fill: var(--white-color);
+    color: var(--title-color);
+    fill: var(--title-color);
     cursor: pointer;
   }
   .change-theme {

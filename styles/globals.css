@@ -21,6 +21,7 @@
   --blue-color: hsl(235deg 52% 33%);
   --white-color: #fff;
   --white: #ccc;
+  --glass-color: rgba(172, 167, 167, 0.20);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -134,6 +135,8 @@ body.dark-theme {
   --body-color: hsla(0, 0%, 12%, 1);
   --container-color: hsl(var(--hue), 8%, 16%);
   --main-color: hsla(270, 5%, 9%, 1);
+  --glass-color: rgb(10 10 10 / 66%);
+
 }
 
 
@@ -310,6 +313,17 @@ the website, in dark theme
 }
 
 
+
+
+.fadeIn {
+  -webkit-animation-duration: 2.0s;
+  animation-duration: 2.0s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
 @keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
@@ -318,16 +332,6 @@ the website, in dark theme
 @-webkit-keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
-}
-
-.fadeIn {
-  -webkit-animation-duration: 2.5s;
-  animation-duration: 2.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
 }
 
 .menu__open {

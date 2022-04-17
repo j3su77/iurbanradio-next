@@ -24,11 +24,11 @@ const AudioControls: FC<Props> = ({
       ) : isPlaying ? (
         <button
           type="button"
-          className="pause"
+          className="pause "
           onClick={() => onPlayPauseClick(false)}
           aria-label="Pause"
         >
-          <Pause />
+          <Pause className="fadeIn" />
         </button>
       ) : (
         <button

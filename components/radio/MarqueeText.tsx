@@ -16,9 +16,10 @@ export const MarqueeText: FC<Props> = ({ isPlaying, isLoading }) => {
         </Marquee>
       ) }
       {isLoading && (
-        <Marquee gradient={false} speed={50} className="overflow-hidden">
-        <span style={{ marginLeft: "300px" }}>Cargando... </span>
-      </Marquee>
+      //   <Marquee gradient={false} speed={50} className="overflow-hidden">
+      //   <span style={{ marginLeft: "300px" }}>Cargando... </span>
+      // </Marquee>
+      <></>
       )}
     </>
   );

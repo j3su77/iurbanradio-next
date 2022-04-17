@@ -45,6 +45,7 @@ export const RadioPlayer = () => {
     $(".wave").removeClass("no-animation");
     $(".radio-lid").removeClass("slide-bottom");
     $(".radio-lid").addClass("slide-top");
+
   };
 
   const isPaused = () => {
@@ -54,9 +55,9 @@ export const RadioPlayer = () => {
       $(this).css("height", height);
     });
     $(".wave").addClass("no-animation");
-    $(".radio-message").removeClass("animate__rollIn");
-    $(".radio-lid").addClass("slide-bottom");
     $(".radio-lid").removeClass("slide-top");
+    $(".radio-lid").addClass("slide-bottom");
+
   };
 
   return (
