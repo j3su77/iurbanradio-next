@@ -32,7 +32,7 @@ export const MainLayout: FC<Props> = ({
       <SideMenu />
       {/* <RadioPlayer />  */}
 
-      <main style={{ margin: "10px auto", maxWidth: "1200px" }}>
+      <main >
         {children}
       </main>
 

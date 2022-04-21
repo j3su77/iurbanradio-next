@@ -23,6 +23,11 @@ interface props {
             id: 3,
             title: "Contactanos",
             link: "#contactanos"
+        },
+        {
+            id: 4,
+            title: "Ingresar",
+            link: "/auth/login"
         }
     ]
 

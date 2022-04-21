@@ -1,63 +1,102 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { EffectFade, Autoplay, Pagination } from 'swiper';
+import { useCallback, useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
-import "swiper/css"
-import "swiper/css/effect-fade"
-import 'swiper/css/pagination';
+import { CarouselDot } from "./CarouselDotButton";
 
-import styles from "./CarouselHome.module.css"
-
-
-SwiperCore.use([Autoplay, Pagination]);
-
+import styles from "./CarouselHome.module.css";
 
 export const CarouselHome = () => {
-  return (
-    <div className='container'>
-      <Swiper
-        modules={[EffectFade]}
-        navigation
-        speed={800}
-        spaceBetween={1}
-        slidesPerView={1}
-        pagination={{ clickable: true, el: ".swiper-pagination" }}
-        loop
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        className={styles.swiper__content}
-      >
-        <SwiperSlide className={styles.swiperslide}>
-          <img src="/carousel-home/fire.png" alt="" />
-          <div className={styles["carousel__text-content"]}>
-             <div className={styles.carousel__text}>
-               <h1 className={styles["carousel__text-title"]}>iUrbanRadio </h1>
-               <p className={styles["carousel__text-description"]}>esto es lo mejor de la radio online esto es lo mejor de la radio</p>
-             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className={styles.swiperslide}>
-          <img src="/carousel-home/oldradio.png" alt="" />
-          <div className={styles["carousel__text-content"]}>
-             <div className={styles.carousel__text}>
-               <h1 className={styles["carousel__text-title"]}>iUrbanRadio </h1>
-               <p className={styles["carousel__text-description"]}>esto es lo mejor de la radio online</p>
-             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className={styles.swiperslide}>
-          <img src="/carousel-home/spikerpro.png" alt="" />
-          <div className={styles["carousel__text-content"]}>
-             <div className={styles.carousel__text}>
-               <h1 className={styles["carousel__text-title"]}>iUrbanRadio </h1>
-               <p className={styles["carousel__text-description"]}>esto es lo mejor de la radio online</p>
-             </div>
-          </div>
-        </SwiperSlide>
+  const [emblaRef, embla] = useEmblaCarousel({ loop: true, skipSnaps: false }, [
+    Autoplay({ delay: 5000, stopOnInteraction: false }),
+  ]);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const scrollTo = useCallback(
+    (index) => embla && embla.scrollTo(index),
+    [embla]
+  );
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
-        <div className="swiper-pagination"></div>
-      </Swiper>
+  const onSelect = useCallback(() => {
+    if (!embla) return;
+    setSelectedIndex(embla.selectedScrollSnap());
+  }, [embla, setSelectedIndex]);
+
+   useEffect(() => {  
+       if (embla) { 
+         setIsLoading(false)
+     }  }, [embla])
+
+  useEffect(() => {
+    if (!embla) return;
+    onSelect();
+    setIsLoading(false)
+
+    setScrollSnaps(embla.scrollSnapList());
+    embla.on("select", onSelect);
+  }, [embla, setScrollSnaps, onSelect]);
+  return (
+    <>
+    <div className={`${styles.container__carousel}`}>
+  
+      <div className={styles.embla} ref={emblaRef}>
+      
+          <div className={styles.embla__container}>
+          {/*------- ----slide 1---------------*/}
+          <div className={styles.embla__slide}>
+            <div className={styles["embla__slide__content-img"]}>
+              <img src="/carousel-home/oldradio.png" alt="" />
+            </div>
+            <div  className={styles["embla__slide__content-text"]}>
+              <h2 className={styles["embla__slide__text-title"]}>iUrbanRadio </h2>
+              <p  className={styles["embla__slide__text-description"]}>
+                esto es lo mejor de la radio online esto es lo mejor de la radio
+              </p>
+            </div>
+          </div>
+
+          {/*------- ----slide 2---------------*/}
+          <div className={styles.embla__slide}>
+            <div className={styles["embla__slide__content-img"]}>
+              <img src="/carousel-home/spikerpro.png" alt="" />
+            </div>
+            <div  className={styles["embla__slide__content-text"]}>
+              <h2 className={styles["embla__slide__text-title"]}>iUrbanRadio </h2>
+              <p  className={styles["embla__slide__text-description"]}>
+                esto es lo mejor de la radio online esto es lo mejor de la radio
+              </p>
+            </div>
+          </div>
+
+          {/*------- ----slide 3---------------*/}
+          <div className={styles.embla__slide}>
+            <div className={styles["embla__slide__content-img"]}>
+              <img src="/carousel-home/fire.png" alt="" />
+            </div>
+            <div  className={styles["embla__slide__content-text"]}>
+              <h2 className={styles["embla__slide__text-title"]}>iUrbanRadio </h2>
+              <p  className={styles["embla__slide__text-description"]}>
+                esto es lo mejor de la radio online esto es lo mejor de la radio
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    
     </div>
-  )
-}
+
+        <div className={styles.embla__container__dots}>
+          {scrollSnaps.map((_, index) => (
+            <CarouselDot
+              key={index}
+              selected={index === selectedIndex}
+              onClick={() => scrollTo(index)}
+            />
+          ))}
+        </div>
+        </>
+  );
+};

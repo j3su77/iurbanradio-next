@@ -1,0 +1,27 @@
+.embla__dots {
+  display: flex;
+  margin-top: var(--mb-1);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.embla__dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--main-color);
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+
+.embla__dot.is__selected {
+  width: 1.5rem;
+  height: 10px;
+  border-radius: 0.5rem;
+  opacity: 1;
+  background-color: var(--blue-color);
+  border-radius: 15px;
+}

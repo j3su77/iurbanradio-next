@@ -19,6 +19,7 @@
   --container-color: #FFF;
   --main-color: rgb(207, 205, 209);
   --blue-color: hsl(235deg 52% 33%);
+  --disabled-color: rgb(229, 229, 229);
   --white-color: #fff;
   --white: #ccc;
   --glass-color: rgba(172, 167, 167, 0.20);
@@ -219,6 +220,12 @@ the website, in dark theme
   background-color: var(--first-color-alt);
 }
 
+.button:disabled,
+.button[disabled] {
+  cursor: not-allowed;
+  background-color: var(--disabled-color);
+  color: #b1b1b1;
+}
 .button__icon {
   transition: .3s;
 }
@@ -337,4 +344,14 @@ the website, in dark theme
 .menu__open {
   overflow: hidden;
 }
+
+.error {
+  color: red;
+}
+
+.is-selected:after {
+  background-color: #1bcacd;
+  opacity: 1;
+}
+
 
