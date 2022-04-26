@@ -45,7 +45,6 @@ export const RadioPlayer = () => {
     $(".wave").removeClass("no-animation");
     $(".radio-lid").removeClass("slide-bottom");
     $(".radio-lid").addClass("slide-top");
-
   };
 
   const isPaused = () => {
@@ -57,21 +56,24 @@ export const RadioPlayer = () => {
     $(".wave").addClass("no-animation");
     $(".radio-lid").removeClass("slide-top");
     $(".radio-lid").addClass("slide-bottom");
-
   };
 
   return (
     <div className="container_radio">
       <div className="radio-container" style={{ position: "relative" }}>
         <div className="radio-body">
-          <LinesBars  />
+          {!isPlaying ? (
+            <span className="radio-body-msg fadeIn">
+              lo mejor de la radio online
+            </span>
+          ) : (
+            isLoading && <span className="radio-body-msg fadeIn">cargando</span>
+          )}
+          <LinesBars />
 
           <div className="button-player">
             <div className="audio-controls">
-             <MarqueeText 
-             isPlaying={isPlaying} 
-             isLoading={isLoading} 
-             />
+              <MarqueeText isPlaying={isPlaying} isLoading={isLoading} />
               <div className="radio-lid slide-bottom" />
               <AudioControls
                 isPlaying={isPlaying}
@@ -94,4 +96,3 @@ export const RadioPlayer = () => {
     </div>
   );
 };
-

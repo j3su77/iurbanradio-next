@@ -10,6 +10,8 @@ interface Props {
 
 export const PostCard: FC<Props> = ({ post }) => {
   return (
+    <Link href={`/post/${post.slug}`} passHref>
+    <a>
     <div className={`${styles.post__content}`}>
       <div className={styles.tag__content}>
       {
@@ -18,18 +20,18 @@ export const PostCard: FC<Props> = ({ post }) => {
         ))
       }
       </div>
-          <Link href={`/post/${post.slug}`} passHref>
-        <a>
+      
           <img
             src={`/posts/${post.images[0]}`}
             alt={post.title}
             className={styles.post__img}
           />
-        </a>
-      </Link>
+      
       <div className={styles.description__post}>
         <h3 className={styles.post__title}>{post.title}</h3>
       </div>
     </div>
+    </a>
+      </Link>
   );
 };

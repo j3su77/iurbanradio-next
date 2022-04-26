@@ -15,10 +15,10 @@
   --title-color: hsl(var(--hue), 4%, 15%);
   --text-color: hsl(var(--hue), 4%, 35%);
   --text-color-light: hsl(var(--hue), 4%, 55%);
-  --body-color: #f3f6f9;
+  --body-color: #f0eff6;
   --container-color: #FFF;
   --main-color: rgb(207, 205, 209);
-  --blue-color: hsl(235deg 52% 33%);
+  --blue-color: rgba(32, 48, 130, 1);
   --disabled-color: rgb(229, 229, 229);
   --white-color: #fff;
   --white: #ccc;
@@ -91,7 +91,7 @@ textarea{
 }
 
 body{
-  margin: var(--header-height) 0 0 0;
+  /* margin: var(--header-height) 0 0 0; */
   background-color: var(--body-color);
   color: var(--text-color);
   transition: .4s; /*For animation dark mode*/
@@ -131,14 +131,20 @@ img{
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
   --first-color-dark: hsl(var(--hue), 8%, 20%);
-  --title-color: hsl(var(--hue), 4%, 95%);
+  --title-color: hsl(var(--hue), 4%, 70%);
   --text-color: hsl(var(--hue), 4%, 75%);
   --body-color: hsla(0, 0%, 12%, 1);
   --container-color: hsl(var(--hue), 8%, 16%);
   --main-color: hsla(270, 5%, 9%, 1);
   --glass-color: rgb(10 10 10 / 66%);
+  --blue-color: #0f0f0f;
 
 }
+
+body.dark-theme img {
+  filter: brightness(75%);
+}
+
 
 
 /*========== Button Dark/Light ==========*/

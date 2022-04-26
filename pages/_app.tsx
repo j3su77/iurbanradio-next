@@ -10,12 +10,19 @@ import { RadioPlayer } from "../components/radio";
 
 import "../styles/globals.css";
 import "../styles/radio.css";
+import { useLoaded } from '../hooks';
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  const loadedPage = useLoaded();
+
   return (
     <UIProvider>
+      {
+        loadedPage &&(
+          <RadioPlayer />
+        )
+      }
       <SeletedTheme>
-        <RadioPlayer />
         <SWRConfig
           value={{
             fetcher: (resource, init) =>
