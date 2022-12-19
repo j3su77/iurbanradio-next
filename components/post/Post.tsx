@@ -17,7 +17,7 @@ interface Props {
 export const Post: FC<Props> = ({ post, isEditing, setIsEditing }) => {
   const { isLoggedIn, user } = useContext(AuthContext);
   const [author, setAuthor] = useState("");
-  const isCreator = useMemo(() => post.author === user?._id, [user]);
+  const isCreator = useMemo(() => post.author === user?.id, [user]);
   const wasEdited = useMemo(() => post.createdAt !== post.updatedAt, [post]);
 
 
@@ -31,9 +31,9 @@ export const Post: FC<Props> = ({ post, isEditing, setIsEditing }) => {
   useEffect(() => {
     const getAuthor = async () => {
       const {
-        data: { username },
+        data: { name },
       } = await iurbanApi.get<IUser>(`user?id_author=${post.author}`);
-      username ? setAuthor(username) : setAuthor("IurbanUser :)");
+      name ? setAuthor(name) : setAuthor("IurbanUser :)");
     };
     getAuthor();
   }, []);

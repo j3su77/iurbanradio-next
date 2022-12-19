@@ -35,7 +35,7 @@ const getUserById = async (
   }
   await db.connect();
 
-  const author = await User.findOne({_id:id_author}).select("username");
+  const author = await User.findOne({_id:id_author}).select("name");
 
   if (!author) {
     return res.status(400).json({
