@@ -83,6 +83,7 @@
   font-family: var(--roboto-font);
   background: var(--main-color);
   transition: 0.4s;
+  cursor: pointer;
 }
 
 .nav__link:hover {

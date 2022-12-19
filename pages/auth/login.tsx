@@ -1,20 +1,16 @@
-import { FC, useContext, useState } from "react";
+import { FC, useContext, useState, useEffect} from "react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { signIn, useSession } from "next-auth/react";
 import { BiErrorCircle } from "react-icons/bi";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
-import styles from "./login.module.css";
-import { AuthLayout } from "../../components/layouts";
+
+import { AuthLayout, IurbanSvg } from "../../components";
 import { validations } from "../../utils";
-
-
-
-import { useEffect } from "react";
-import { IurbanSvg } from "../../components/ui";
 import { AuthContext } from "../../context";
-import { IUser } from '../../interfaces/user';
+
+import styles from "./login.module.css";
 
 type FormData = {
   email: string;

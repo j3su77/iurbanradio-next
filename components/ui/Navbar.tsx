@@ -10,7 +10,6 @@ import { itemsNav } from "../../database";
 
 import styles from "./Navbar.module.css";
 import { useLoaded } from "../../hooks";
-import { useSelector, useDispatch } from "react-redux";
 
 import { useSession } from "next-auth/react";
 import { UIContext } from "../../context";

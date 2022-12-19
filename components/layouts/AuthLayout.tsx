@@ -7,9 +7,9 @@ import { RiMoonFill, RiSunFill } from "react-icons/ri";
 
 import { useLoaded } from "../../hooks";
 import { IurbanSvg } from "../ui";
-import styles from "./AuthLayout.module.css";
 import { UIContext } from '../../context';
 
+import styles from "./AuthLayout.module.css";
 
 interface Props {
   title: string;

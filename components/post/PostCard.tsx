@@ -26,7 +26,7 @@ export const PostCard: FC<Props> = ({ post, isLoading, pageLimit }) => {
           duration={.8}
         >
           {Array.from(Array(pageLimit).keys()).map((pag) => (
-            <div className={`${styles.post__content}`}>
+            <div key={pag} className={`${styles.post__content}`}>
               <Skeleton key={pag} width="100%" height={300} inline />
             </div>
           ))}

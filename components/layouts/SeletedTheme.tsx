@@ -1,14 +1,15 @@
-import React, { FC, useContext, useEffect  } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { FC, useContext, useEffect  } from "react";
+
 
 import { UIContext } from "../../context";
 
 
 export const SeletedTheme: FC = ({ children }) => {
-   const { isDark, isMenuOpen } = useContext(UIContext);
+   const { isDark } = useContext(UIContext);
 
   let isTheme: string;
-  let openMenu: string
+
+
   useEffect(() => {
     isTheme = isDark ? "dark-theme" : "light-theme";
     if (process.browser)  document.querySelector("body")!.classList.add(isTheme)
