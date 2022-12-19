@@ -1,0 +1,107 @@
+.post {
+  font-weight: 300;
+}
+
+.post_content_img {
+  position: relative;
+  max-height: 370px;
+  height: 300px;
+  width: 100%;
+}
+
+.content_img_icon {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: -1;
+}
+
+.content_img_icon svg {
+  fill: var(--blue-color);
+  opacity: .4;
+  filter:drop-shadow(1px 1px 3px rgb(90, 90, 90));
+}
+
+.post_img {
+  width: 100%;
+  object-fit: cover;
+  max-height: inherit;
+  max-height: 300px;
+
+}
+
+.post_info {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.post_author {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+.post_text_info {
+  font-weight: 400;
+  display: inline;
+}
+
+.post_edit_btns {
+  white-space: nowrap;
+  gap: 0.6rem;
+  display: flex;
+  align-items: flex-end;
+  font-weight: 400;
+}
+
+.post_btn_del,
+.post_btn_edit {
+  padding: 0.5rem 0.6rem;
+  color: white;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+}
+
+.post_btn_edit {
+  background-color: gray;
+}
+
+.post_btn_del {
+  background-color: rgb(190, 8, 8);
+}
+.post_edit_btns svg {
+  font-size: 1rem;
+  padding-top: 0.2rem;
+}
+.content_title {
+  padding-top: 0.5rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1.2em;
+  margin-bottom: var(--mb-1);
+}
+
+.title::first-letter,
+.content_description::first-letter {
+  text-transform: uppercase;
+}
+
+.post_body::first-letter {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1em;
+  margin-right: 5px;
+}
+
+.content_description {
+  padding-top: var(--mb-0-5);
+  font-weight: 400;
+}
