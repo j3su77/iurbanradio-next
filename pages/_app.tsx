@@ -1,3 +1,7 @@
+
+import "../styles/globals.css";
+import "../styles/radio.css";
+
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { SessionProvider } from "next-auth/react";
@@ -8,9 +12,6 @@ import { AuthProvider, UIProvider } from "../context";
 import { SeletedTheme, RadioPlayer} from "../components";
 import { useLoaded } from "../hooks";
 
-
-import "../styles/globals.css";
-import "../styles/radio.css";
 import "jodit/build/jodit.min.css";
 import "react-loading-skeleton/dist/skeleton.css";
 

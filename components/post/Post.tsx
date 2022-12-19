@@ -17,7 +17,7 @@ interface Props {
 export const Post: FC<Props> = ({ post, isEditing, setIsEditing }) => {
   const { isLoggedIn, user } = useContext(AuthContext);
   const [author, setAuthor] = useState("");
-  const isCreator = useMemo(() => post.author === user?.id, [user]);
+  const isCreator = useMemo(() => post.author === user?._id, [user]);
   const wasEdited = useMemo(() => post.createdAt !== post.updatedAt, [post]);
 
 

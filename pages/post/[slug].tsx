@@ -37,7 +37,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { slug = "" } = params as { slug: string };
 
   const post = await dbPost.getPostBySlug(slug);
-  console.log(post);
   if (!post) {
     return {
       redirect: {

@@ -76,6 +76,13 @@ const createPost = async (
     });
   }
 
+  if (!mongoose.isValidObjectId(author)) {
+    return res.status(400).json({
+      message:
+        "Error, el ID del autor no es válido, contactar al administrador del sistema",
+    });
+  }
+
   const post = new Post({
     title: title.toLocaleLowerCase(),
     description,
@@ -85,6 +92,7 @@ const createPost = async (
     tags,
   });
 
+
   post.save((err) => {
     if (err) {
       return res.status(400).json({
@@ -93,7 +101,7 @@ const createPost = async (
       });
     } else {
       return res.status(200).json({
-        id: post!._id,
+        _id: post!._id,
         title: post!.title,
         slug: post!.slug,
       });
@@ -163,7 +171,7 @@ const updatePost = async (
         console.error(err);
       } else {
         return res.status(200).json({
-          id: post!._id,
+          _id: post!._id,
           title: post!.title,
           slug: post!.slug,
         });

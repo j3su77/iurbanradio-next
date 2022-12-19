@@ -12,7 +12,7 @@ export const useUpdatePost = async (
 ): Promise<Data> => {
   try {
     const { data } = await iurbanApi.put<IPost>("posts", {
-      id,
+       id,
       title: title.trim(),
       description,
       cover,
