@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 import { AuthContext, authReducer } from "./";
 import { iurbanApi } from "../../api";
 import { IUser } from "../../interfaces";
+import axios from 'axios';
 
 export interface AuthState {
   isLoggedIn: boolean;
@@ -29,6 +30,8 @@ export const AuthProvider: FC = ({ children }) => {
       console.log({ user: data.user });
 
       dispatch({ type: "[Auth] - Login", payload: data.user as IUser });
+    } else {
+      dispatch({type: '[Auth] - Logout', payload: ""})
     }
   }, [status, data]);
 
@@ -47,7 +50,10 @@ export const AuthProvider: FC = ({ children }) => {
       dispatch({ type: "[Auth] - Login", payload: user });
       return true;
     } catch (error) {
-      return false;
+      if ( axios.isAxiosError(error) ) {
+        console.log( error.response)
+        }
+        return false
     }
   };
 
@@ -56,7 +62,7 @@ export const AuthProvider: FC = ({ children }) => {
     signOut({redirect: false});
     // router.reload();
     // Cookies.remove('token');
-    dispatch({ type: "[Auth] - Logout", payload: error });
+    dispatch({ type: "[Auth] - Logout", payload: "error" + error });
 }
 
 
