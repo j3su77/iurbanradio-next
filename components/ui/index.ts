@@ -12,3 +12,4 @@ export * as FormElement from "./FormElement"
 
 
 export * from "./IurbanSvg"
+export * from "./IurbanSvg"

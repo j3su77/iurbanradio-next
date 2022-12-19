@@ -26,3 +26,4 @@ export const authReducer = (state: AuthState, action: AuthActionType): AuthState
             return state;
    }
  };
+    
