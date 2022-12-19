@@ -28,7 +28,7 @@ export const checkUserEmailPassword = async (
     id: _id,
     email: email.toLocaleLowerCase(),
     role,
-    username,
+    name: username,
   };
 };
 
@@ -45,7 +45,7 @@ export const oAUthToDbUser = async (oAuthEmail: string, oAuthName: string) => {
 
   const newUser = new User({
     email: oAuthEmail,
-    name: oAuthName,
+    username: oAuthName,
     password: "@",
     role: "client",
   });
