@@ -46,6 +46,7 @@ export const Pagination: FC<Props> = ({ data, page, setPage, pageLimit }) => {
 
       {Array.from(Array(totalPages).keys()).map((pag) => (
         <button
+          key={pag}
           disabled={pag + 1 === page}
           className={styles.pag_btn}
           onClick={() => setPage(pag + 1)}
