@@ -2,9 +2,8 @@ import bcrypt from "bcryptjs";
 
 import { User } from "../models";
 import { db } from ".";
-import { IUser } from "../interfaces/user";
-import mongoose from "mongoose";
-import { ObjectId } from "mongoose";
+
+
 
 export const checkUserEmailPassword = async (
   email: string,
@@ -22,13 +21,13 @@ export const checkUserEmailPassword = async (
     return null;
   }
 
-  const { role, username, _id } = user;
+  const { role, name, _id } = user;
 
   return {
     id: _id,
     email: email.toLocaleLowerCase(),
     role,
-    name: username,
+    name: name,
   };
 };
 
@@ -39,21 +38,21 @@ export const oAUthToDbUser = async (oAuthEmail: string, oAuthName: string) => {
 
   if (user) {
     await db.disconnect();
-    const { _id, username, email, role } = user;
-    return { _id, username, email, role };
+    const { _id, name, email, role } = user;
+    return { _id, name, email, role };
   }
 
   const newUser = new User({
     email: oAuthEmail,
-    username: oAuthName,
+    name: oAuthName,
     password: "@",
     role: "client",
   });
   await newUser.save();
   await db.disconnect();
 
-  const { _id, username, email, role } = newUser;
-  return { _id, username, email, role };
+  const { _id, name, email, role } = newUser;
+  return { _id, name, email, role };
 };
 
 

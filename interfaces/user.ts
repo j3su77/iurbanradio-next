@@ -1,11 +1,10 @@
-import {ObjectId} from 'mongoose';
-import { type } from 'os';
+
 
 
 
 export interface IUser {
     _id: string;
-    username: string;
+    name: string;
     email: string;
     password?: string;
     role: "admin" | "client" | "super-user";

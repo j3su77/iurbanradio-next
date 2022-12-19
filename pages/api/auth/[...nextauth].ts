@@ -3,7 +3,7 @@ import GithubProvider from 'next-auth/providers/github';
 import Credentials from 'next-auth/providers/credentials';
 
 import { dbUser } from '../../../database';
-import { IUser } from '../../../interfaces/user';
+
 
 export default NextAuth({
   // Configure one or more authentication providers
