@@ -1,3 +1,4 @@
+
 services:
   teslodb:
     image: mongo:5.0.0
@@ -5,4 +6,13 @@ services:
     ports:
       - 27017:27017
     volumes:
+
+services:
+  teslodb:
+    image: mongo:5.0.0
+    container_name: iurban-database
+    ports:
+      - 27017:27017
+    volumes:
+
       - ./mongo:/data/db
