@@ -65,7 +65,8 @@ export const PostEdit: FC<Props> = ({ setIsEditing, post, isCreating }) => {
     if (post || post !== undefined) {
       data = await useUpdatePost(idPost!, title.trim(), content, cover, tags);
     } else {
-      data = await useCreatePost(title.trim(), content, cover, user!._id, tags);
+      const id = user!._id || ""
+      data = await useCreatePost(title.trim(), content, cover, id, tags);
     }
 
     if (typeof data === "string") {
