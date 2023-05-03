@@ -1,0 +1,29 @@
+
+.post__container {
+    display: grid;
+    margin-top: 2rem;
+  }
+  
+  .posts__content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-top: 1rem;
+    min-height: 300px;
+  }
+
+  .post__section-title {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  @media  screen and (min-width: 540px)  {
+    .posts__content {
+      grid-template-columns: repeat(2,1fr);
+      gap: .7rem;
+      padding-top: 1rem;
+
+    }
+    
+  }

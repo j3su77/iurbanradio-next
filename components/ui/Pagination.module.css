@@ -1,0 +1,22 @@
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: .6rem;
+  margin-top: 1rem;
+}
+
+.pag_btn {
+  width: fit-content;
+  background-color: var(--title-color);
+  color: var(--main-color);
+  padding: .4rem .9rem;
+  border-radius: 5px;
+  place-items: center;
+}
+
+.pag_btn:disabled {
+  background-color: var(--first-color);
+  color: var(--white-color);
+}

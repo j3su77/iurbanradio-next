@@ -1,0 +1,156 @@
+.post {
+  font-weight: 300;
+}
+
+.post_info {
+  justify-content: space-between;
+  align-items: flex-end ;
+  padding: 1rem;
+  background-color: var(--blue-color);
+}
+
+.editing_text {
+  display: inline;
+  color: var(--white);
+}
+
+.post_content_img {
+  margin-top: 1rem;
+}
+
+.preview_content_img {
+  height: 370px;
+  border: 5px solid var(--blue-color);
+  position: relative;
+  background-color: var(--main-color);
+}
+
+
+
+.content_img_icon svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 150px;
+  opacity: .3;
+  z-index: 1;
+}
+
+.preview_img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  transition: 1s;
+  z-index: 100;
+position: absolute;
+}
+
+
+.post_input_img,
+.post_input_title {
+  width: 100%;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  resize: none;
+  border-radius: 7px;
+}
+
+.post_input_title {
+  font-size: 2.5rem;
+}
+
+
+.post_author {
+  display: flex;
+  flex-direction: column;
+  font-size: .8rem;
+}
+
+.post_text_info {
+  font-weight: 400;
+  display: inline;
+}
+
+.post_edit_btns {
+  white-space: nowrap;
+  gap: .6rem;
+  display: flex;
+  align-items: flex-end;
+  font-weight: 400;
+}
+
+.post_btn_del,
+.post_btn_edit {
+  padding: .5rem .6rem;
+  color: white;
+  border-radius: .3rem;
+  font-size: .75rem;
+}
+
+.post_btn_edit {
+  background-color: gray;
+}
+
+.post_btn_del {
+  background-color: rgb(190, 8, 8);
+}
+.post_edit_btns svg {
+  font-size: 1rem;
+  padding-top: .2rem;
+}
+.content_title {
+  padding-top: .5rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1.2em;
+  margin-bottom: var(--mb-1);
+}
+
+.title::first-letter,
+.content_description::first-letter {
+  text-transform: uppercase;
+}
+
+.post_body::first-letter {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1em;
+  margin-right: 5px;
+}
+
+.content_description {
+  padding-top: var(--mb-0-5);
+  font-weight: 400;
+}
+.post_tag_selected {
+  width: fit-content;
+  padding: .5rem .7rem;
+  border-radius: .3rem;
+  margin: 1rem 0;
+  background-color: var(--blue-color);
+}
+.post_tag {
+  width: fit-content;
+  padding: .5rem .7rem;
+  border-radius: .3rem;
+  margin: 1rem 0;
+  background-color: red;
+}
+
+.post_all_tags {
+  margin-top: 1rem;
+}
+
+.post_content_tags_selected {
+  display: flex;
+  gap: .6rem;
+}
