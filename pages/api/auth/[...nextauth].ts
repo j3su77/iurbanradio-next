@@ -1,6 +1,6 @@
 import NextAuth from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
 import GithubProvider from 'next-auth/providers/github';
-import Credentials from 'next-auth/providers/credentials';
 
 import { dbUser } from '../../../database';
 
@@ -10,29 +10,31 @@ export default NextAuth({
     
     // ...add more providers here
 
-    Credentials({
+    CredentialsProvider({
       name: 'Custom Login',
       credentials: {
-        email: { label: 'Correo:', type: 'email', placeholder: 'correo@google.com'  },
-        password: { label: 'Contraseña:', type: 'password', placeholder: 'Contraseña'  },
+        email: { label: 'Correo:', type: 'email', placeholder: 'correo@google.com' },
+        password: { label: 'Contraseña:', type: 'password', placeholder: 'Contraseña' },
       },
-      async authorize(credentials) {
-        console.log({credentials})
+      authorize: async (credentials, _req) => {
         // return { name: 'Juan', correo: 'juan@google.com', role: 'admin' };
-
-
-        return await dbUser.checkUserEmailPassword( credentials!.email, credentials!.password );
-
-
         
+        if(!credentials) {
+          return null
+        }
+        const { email, password } = credentials
 
-        return await dbUser.checkUserEmailPassword( credentials!.email, credentials!.password );
-
-        
-
-
+        console.log({ credentials });
+    
+        const user = await dbUser.checkUserEmailPassword(email, password);
+       
+        if(user) {
+          return user;
+        }else {
+          return null
+        }
       }
-    }),
+    })
 
 
 
@@ -40,12 +42,6 @@ export default NextAuth({
     //   clientId: process.env.GITHUB_ID,
     //   clientSecret: process.env.GITHUB_SECRET,
     // }),
-
-
-    GithubProvider({
-      clientId: process.env.GITHUB_ID || "", 
-      clientSecret: process.env.GITHUB_SECRET || "",
-    }),
 
 
   ],
@@ -100,7 +96,7 @@ export default NextAuth({
     async session({ session, token, user }){
       // console.log({ session, token, user });
 
-      session.accessToken = token.accessToken;
+      // session.accessToken = token.accessToken;
       session.user = token.user as any;
 
   

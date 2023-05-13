@@ -87,7 +87,7 @@ const LoginPage: FC = () => {
       const destination = router.query.p?.toString() || '/';
       router.replace(destination);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

@@ -21,10 +21,11 @@ export const checkUserEmailPassword = async (
     return null;
   }
 
-  const { role, name, id } = user;
+  const { role, name, _id } = user;
 
   return {
-    _id: id,
+    id: _id,
+    _id,
     email: email.toLocaleLowerCase(),
     role,
     name: name,
