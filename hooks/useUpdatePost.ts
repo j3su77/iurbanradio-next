@@ -1,4 +1,4 @@
-import iurbanApi from "../api/iurbanApi";
+import iurbanApi from "../apis/iurbanApi";
 import { IPost } from "../interfaces/posts";
 
 type Data = string | IPost;

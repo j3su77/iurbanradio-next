@@ -2,7 +2,7 @@ import { Dispatch, FC, useContext, useEffect, useMemo, useState } from "react";
 
 import { AuthContext } from "../../context";
 import { IPost, IUser } from "../../interfaces";
-import { iurbanApi } from "../../api";
+import { iurbanApi } from "../../apis";
 import { humanizedDate } from "../../utils";
 
 import styles from "./Post.module.css";

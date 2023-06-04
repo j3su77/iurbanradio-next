@@ -4,7 +4,7 @@ import { useSession, signOut } from "next-auth/react";
 import Cookies from "js-cookie";
 
 import { AuthContext, authReducer } from "./";
-import { iurbanApi } from "../../api";
+import { iurbanApi } from "../../apis";
 import { IUser } from "../../interfaces";
 import axios from 'axios';
 

@@ -11,7 +11,7 @@ import styles from "./PostEdit.module.css";
 import { BiImageAdd } from "react-icons/bi";
 import React from "react";
 import { Editor } from "../ui/Editor";
-import iurbanApi from '../../api/iurbanApi';
+import iurbanApi from '../../apis/iurbanApi';
 import { ITag } from '../../interfaces/tag';
 import { AiFillTag } from "react-icons/ai";
 
